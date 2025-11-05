@@ -18,22 +18,18 @@ pipeline {
             }
         }
 
-        // Use a Maven Docker image for the build/test stage so `mvn` exists
+        // Build and test using the official Maven Docker image via docker run
         stage('Build and Test') {
-            agent {
-                docker {
-                    image 'maven:3.8.6-openjdk-11'
-                    // reuseNode ensures the workspace is shared between the docker container and the Jenkins host
-                    reuseNode true
-                }
-            }
             steps {
                 echo "Building the Java project and running unit tests inside a Maven container..."
                 sh '''
-                echo "Running Maven build..."
-                mvn -B clean package -DskipTests
-                echo "Running automated tests..."
-                mvn test
+                echo "Running Maven build in a Docker container..."
+                # Mount the Jenkins workspace into the Maven container and run Maven there.
+                # The workspace will be at /usr/src/mymaven inside the container.
+                docker run --rm -v "$WORKSPACE":/usr/src/mymaven -w /usr/src/mymaven maven:3.8.6-openjdk-11 mvn -B clean package -DskipTests
+
+                echo "Running automated tests in a Docker container..."
+                docker run --rm -v "$WORKSPACE":/usr/src/mymaven -w /usr/src/mymaven maven:3.8.6-openjdk-11 mvn test
                 '''
             }
         }
