@@ -6,7 +6,7 @@ pipeline {
         IMAGE_NAME = 'pipeline-app'
         ECR_REPO = '878311920432.dkr.ecr.ap-south-1.amazonaws.com/pipeline-app'
         CONTAINER_NAME = 'pipeline-container'
-        EC2_HOST = 'ubuntu@3.88.204.123'
+        EC2_HOST = 'ubuntu@54.167.104.165'
     }
 
     stages {
