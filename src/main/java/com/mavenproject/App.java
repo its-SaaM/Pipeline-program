@@ -1,6 +1,6 @@
-package main.java.com.mavenproject;
+package com.mavenproject;
 
-/**
+/**sh
  * Hello world!
  *
  */

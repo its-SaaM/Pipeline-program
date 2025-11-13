@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: com.mavenproject.AppTest
+Test set: test.java.com.mavenproject.AppTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 s - in com.mavenproject.AppTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 s - in test.java.com.mavenproject.AppTest
