@@ -71,5 +71,6 @@
         </plugin>
       </plugins>
     </pluginManagement>
+    <finalName>Docker-Integration</finalName>
   </build>
 </project>
