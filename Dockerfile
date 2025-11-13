@@ -1,4 +1,4 @@
  FROM openjdk:21
  EXPOSE 8080
- ADD target/Docker-Integration.jar Docker-Integration.jar
- ENTRYPOINT ["java","-jar","/Docker-Integration.jar"]
+ ADD target/docker-integration.jar docker-integration.jar
+ ENTRYPOINT ["java","-jar","/docker-integration.jar"]
